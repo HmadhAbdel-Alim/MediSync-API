@@ -1,24 +1,60 @@
-MediSync - Healthcare & Prescription Management Web API
-MediSync is a RESTful Web API built with ASP.NET Core and Clean Architecture. It provides a backend system for managing healthcare appointments, patients, prescriptions, and reminder scheduling.
-🚀 Features
-Clean Architecture: Separation of concerns using Core (Domain/Application), Infrastructure, and API layers.
-Prescription & Reminders: Tracks prescription items and handles daily dose schedule notifications/reminders.
-Appointments System: Doctor appointment booking and schedule tracking.
-Data Validation & DTOs: Strongly-typed request/response models with clean data mapping.
-Entity Framework Core: Relational database mapping with SQL Server migrations and foreign key constraints.
-🛠️ Tech Stack & Tools
+# 🏥 MediSync - Healthcare & Prescription Management API
+
+An enterprise-grade RESTful Web API built with **ASP.NET Core**, strictly adhering to **Clean Architecture** principles to manage healthcare appointments, patients, prescriptions, and automated reminder scheduling.
+
+---
+
+## 🏗️ Architecture & How It Works
+
+The solution is divided into distinct decoupled layers to enforce **Separation of Concerns (SoC)** and maintainability:
+
+```text
+├── API (Controllers, Middlewares, Program.cs)
+├── Application (Services, DTOs, Interfaces, Validators)
+├── Core / Domain (Entities, Enums, Core Business Logic)
+└── Infrastructure (Data Context, Repositories, EF Core Migrations)
+Key Modules & Workflow:
+Core Architecture: Built using Clean Architecture, separating Domain, Application, Infrastructure, and Presentation layers.
+
+Prescription & Reminders: Manages prescription items, tracks daily dose schedules, and handles automated reminder notifications.
+
+Doctor Appointments & Booking: Handles patient appointment booking, scheduling, and status tracking with strong data validation.
+
+Data Validation & DTOs: Implements strongly-typed request/response models with clean data mapping.
+
+Security & Authentication: Secure endpoints protected using JWT authentication and ASP.NET Core Identity.
+
+Global Error Handling: Centralized custom middleware for catching unhandled exceptions and standardizing API JSON error responses.
+
+🛠️ Tech Stack & Design Patterns
 Framework: .NET / ASP.NET Core Web API
-ORM: Entity Framework Core
-Database: Microsoft SQL Server
-Architecture: Clean Architecture / Repository Pattern
-Language: C#
+
+Database & ORM: SQL Server, Entity Framework Core (Code First), Relational database mapping with foreign key constraints
+
+Architecture & Patterns: Clean Architecture, Repository Pattern, Dependency Injection
+
 Version Control: Git & GitHub
-⚙️ Getting Started
-Prerequisites
-.NET SDK
-SQL Server & SSMS
-Visual Studio 2022 / VS Code
-Installation & Run
-Clone the repository:
-git clone [https://github.com/hmadhabdelem/MediSync-API.git](https://github.com/hmadhabdelem/MediSync-API.git)
+
+⚙️ How to Setup & Run
+Clone the Repository:
+
+Bash
+git clone [https://github.com/HmadhAbdel-Alim/MediSync-API.git](https://github.com/HmadhAbdel-Alim/MediSync-API.git)
 cd MediSync-API
+Configure App Settings:
+Update your SQL Server connection string in appsettings.json inside the MediSync.API project layer.
+
+Update Database (Run Migrations):
+
+Bash
+dotnet ef database update --project MediSync.Infrastructure --startup-project MediSync.API
+Run the Application:
+
+Bash
+dotnet run --project MediSync.API
+👨‍💻 Developer
+Hmadh Abdel-Alim Hmad
+
+Junior .NET Backend Developer
+
+LinkedIn Profile | GitHub Profile
